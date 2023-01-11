@@ -6,8 +6,11 @@ This document is under development.
 # Overview of Bitcoin Core Binaries
 
 What is a binary?
+
 Difference between a binary and an "app".
+
 What binaries are included with Bitcoin Core? Depends on which OS.
+
 How to find the binaries?
 
 ## What does bitcoind do?

@@ -13,15 +13,17 @@ What binaries are included with Bitcoin Core? Depends on which OS.
 
 How to find the binaries?
 
-## What does bitcoind do?
+## What Does the bitcoind Binary Do?
 
-## What does bitcoin-qt do?
+## What Does bitcoin-qt Binary Do?
 
-## What does bitcoin-cli do?
+## What Does bitcoin-cli Binary Do?
 
 ## Summarizing bitcoind vs bitcoin-qt vs bitcoin-cli
 
 Differences between the bitcoin-qt and bitcoind binaries
+
+https://bitcoin.stackexchange.com/questions/13368/whats-the-difference-between-bitcoind-and-bitcoin-qt-different-commands
 
 # How to Install and Run Bitcoin Core
 
@@ -62,3 +64,7 @@ Meh.
 ## Use the Integrated RPC Console
 
 ## Use Shell/Bash Commands from the Terminal
+
+## Example Script to Check the Initial Sync Status
+
+## Example Script to Check the Prune Status

@@ -24,17 +24,17 @@ Differences between the bitcoin-qt and bitcoind binaries
 
 ## Linux
 
-## Option 1: apt install
+### Option 1: apt install
 
-## Option 2: download from bitcoincore.org/en/download
+### Option 2: download from bitcoincore.org/en/download
 
-## Option 3: build from source
+### Option 3: build from source
 
 ## macOS
 
-## Option 1: download from bitcoincore.org/en/download.
+### Option 1: download from bitcoincore.org/en/download.
 
-## Option 2: build from source
+### Option 2: build from source
 
 ## Windows
 

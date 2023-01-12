@@ -37,9 +37,49 @@ https://bitcoin.stackexchange.com/questions/13368/whats-the-difference-between-b
 
 ## macOS
 
-### Option 1: download from bitcoincore.org/en/download.
+### Option 1: Download from bitcoincore.org/en/download.
 
-### Option 2: build from source
+### Option 2: Build from Source
+
+Open Terminal and run the following commands.
+
+```bash
+## Install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+## Install dependencies
+brew install automake libtool boost pkg-config libevent
+
+## Clone the repository and change to the directory
+git clone https://github.com/bitcoin/bitcoin.git && cd bitcoin/
+
+## Auto-generate the configure script
+./autogen.sh
+
+## Create the Makefile
+./configure
+
+## Compile using all CPUs
+make -j "$(($(sysctl -n hw.physicalcpu)+1))"
+
+## Check the build
+make check
+
+## Verify that the binaries exist
+ls /usr/local/bin/bitcoin*
+
+## Install the software
+make install
+
+## Verify the installation
+ls /usr/local/bin/bitcoin*
+
+## Run bitcoind
+bitcoind --daemonwait
+
+## Test the cli
+bitcoin-cli getblockchaininfo
+```
 
 ## Windows
 

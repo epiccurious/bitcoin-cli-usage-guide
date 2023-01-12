@@ -68,3 +68,18 @@ Meh.
 ## Example Script to Check the Initial Sync Status
 
 ## Example Script to Check the Prune Status
+
+The following script will tell you how far back your Bitcoin Core blocks data goes.
+```bash
+## Set "asdf" on the next line to your binary directory
+## For example, if your binary is located at ~/bitcoin/bin/,
+## set binary_directory to $HOME/bitcoin/bin
+binary_directory="$HOME/bitcoin/bin"
+
+## Use bitcoin-cli to find the blockchain info
+## Save the response as a variable blockchain_info
+blockchain_info="$binary_directory"/bitcoin-cli getblockchaininfo
+
+## asdf
+
+```

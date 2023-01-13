@@ -33,7 +33,34 @@ https://bitcoin.stackexchange.com/questions/13368/whats-the-difference-between-b
 
 ### Option 2: download from bitcoincore.org/en/download
 
-### Option 3: build from source
+### Option 3: Build from Source
+
+```bash
+FIRST INSTALL THE DEPENDENCIES
+
+## Install the core dependencies
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
+
+## Install the second set of dependencies
+sudo apt-get install libevent-dev libboost-dev
+
+## Install sqlite (for descriptor wallets)
+sudo apt install libsqlite3-dev
+
+## Install the qt graphical user interface dependencies
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
+
+sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 libevent-dev libboost-dev libsqlite3-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
+
+#sudo apt-get install libboost-all-dev
+
+THEN PERFORM THE BUILD PROCESS
+
+./autogen.sh
+./configure
+make -j "$(($(nproc)+1))"
+make check
+```
 
 ## macOS
 

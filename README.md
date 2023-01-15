@@ -87,19 +87,19 @@ cd bitcoin/
 ## Create the Makefile
 ./configure
 
-## Compile using all CPUs
+## Compile the bitcoind, bitcoin-cli, and bitcoin-qt binaries 
 make -j "$(($(sysctl -n hw.physicalcpu)+1))" src/{bitcoind,bitcoin-cli,qt/bitcoin-qt}
 
-## Verify that the binaries exist
+## (Optional/Educational) Verify that the binaries exist
 ls src/{bitcoind,bitcoin-cli,qt/bitcoin-qt}
 
-## Check the build
+## (Optional/Educational) Check the build
 make check
 
 ## Install Bitcoin Core
 make install
 
-## Verify the installation
+## (Optional/Educational) Verify the installation
 ls /usr/local/bin/bitcoin*
 
 ## Run bitcoind
@@ -108,6 +108,10 @@ bitcoind --daemonwait
 ## Test the cli
 bitcoin-cli getblockchaininfo
 ```
+
+## (Optional/Educational) Delete the source code and build files
+cd ../
+rm -rf bitcoin/
 
 ## Windows
 

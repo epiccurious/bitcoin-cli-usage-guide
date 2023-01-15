@@ -102,8 +102,9 @@ make install
 ## (Optional/Educational) Verify the installation
 ls /usr/local/bin/bitcoin*
 
-## Run bitcoind
-bitcoind --daemonwait
+## Run the GUI version of Bitcoin Core with server mode enabled
+## Note: After running this command, press `return` to get a prompt again.
+bitcoin-qt --server & disown
 
 ## Test the cli
 bitcoin-cli getblockchaininfo

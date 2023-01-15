@@ -75,27 +75,28 @@ Open Terminal and run the following commands.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## Install dependencies
-brew install automake libtool boost pkg-config libevent
+brew install automake boost libevent libtool pkg-config qt@5
 
 ## Clone the repository and change to the directory
-git clone https://github.com/bitcoin/bitcoin.git && cd bitcoin/
+git clone https://github.com/bitcoin/bitcoin.git
+cd bitcoin/
 
-## Auto-generate the configure script
+## Generate the configure script
 ./autogen.sh
 
 ## Create the Makefile
 ./configure
 
 ## Compile using all CPUs
-make -j "$(($(sysctl -n hw.physicalcpu)+1))"
+make -j "$(($(sysctl -n hw.physicalcpu)+1))" src/{bitcoind,bitcoin-cli,qt/bitcoin-qt}
+
+## Verify that the binaries exist
+ls src/{bitcoind,bitcoin-cli,qt/bitcoin-qt}
 
 ## Check the build
 make check
 
-## Verify that the binaries exist
-ls /usr/local/bin/bitcoin*
-
-## Install the software
+## Install Bitcoin Core
 make install
 
 ## Verify the installation

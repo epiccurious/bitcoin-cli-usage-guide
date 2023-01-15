@@ -75,7 +75,7 @@ Open Terminal and run the following commands.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## Install dependencies
-brew install automake boost libevent libtool pkg-config qt@5
+brew install automake berkeley-db@4 boost libevent libtool pkg-config qt@5
 
 ## Clone the repository and change to the directory
 git clone https://github.com/bitcoin/bitcoin.git

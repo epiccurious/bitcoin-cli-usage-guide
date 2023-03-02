@@ -35,9 +35,9 @@ https://bitcoin.stackexchange.com/questions/13368/whats-the-difference-between-b
 
 ### Option 3: Build from Source
 
-```bash
-FIRST INSTALL THE DEPENDENCIES
+#### First, install the dependencies
 
+```bash
 ## Install the core dependencies
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
 
@@ -53,13 +53,35 @@ sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-d
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 libevent-dev libboost-dev libsqlite3-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
 
 #sudo apt-get install libboost-all-dev
+```
 
-THEN PERFORM THE BUILD PROCESS
+#### Then, clone the repository
 
+```bash
+git clone https://github.com/bitcoin/bitcoin
+cd bitcoin/
+```
+
+#### Finally, perform the build process
+
+```
+## Auto-generate the configure script
 ./autogen.sh
+
+## Check the dependencies and create the Makefile
 ./configure
+
+## Build Bitcoin Core using all CPU cores
 make -j "$(($(nproc)+1))"
+
+## Check the integrity of the build
 make check
+```
+
+#### Optionally, run the functional tests
+
+```
+python3 test/functional/test_runner.py --extended
 ```
 
 ## macOS
@@ -68,23 +90,32 @@ make check
 
 ### Option 2: Build from Source
 
-Open Terminal and run the following commands.
+#### First, install the dependencies and clone the repository
 
 ```bash
-## Install brew
+## Install the Xcode command-line utilities
+xcode-select --install
+
+## Install brew, a third-party package manager
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## Install dependencies
 brew install automake berkeley-db@4 boost libevent libtool pkg-config qt@5
+```
 
-## Clone the repository and change to the directory
+#### Then, clone the repository
+```bash
 git clone https://github.com/bitcoin/bitcoin.git
 cd bitcoin/
+```
 
-## Generate the configure script
+#### Finally, perform the build process
+
+```bash
+## Auto-generate the configure script
 ./autogen.sh
 
-## Create the Makefile
+## Check the dependencies and create the Makefile
 ./configure
 
 ## Compile the bitcoind, bitcoin-cli, and bitcoin-qt binaries 
@@ -95,13 +126,21 @@ ls src/{bitcoind,bitcoin-cli,qt/bitcoin-qt}
 
 ## (Optional/Educational) Check the build
 make check
+```
 
-## Install Bitcoin Core
+#### (Optional/Educational) Install Bitcoin Core
+
+```
+## Install the binaries and documentation files
 make install
 
-## (Optional/Educational) Verify the installation
+## Look for the binaries in /usr/local/bin/
 ls /usr/local/bin/bitcoin*
+```
 
+#### Start up Bitcoin Core and test the command-line interface
+
+```bash
 ## Run the GUI version of Bitcoin Core with server mode enabled
 ## Note: After running this command, press `return` to get a prompt again.
 bitcoin-qt --server & disown
@@ -110,9 +149,12 @@ bitcoin-qt --server & disown
 bitcoin-cli getblockchaininfo
 ```
 
-## (Optional/Educational) Delete the source code and build files
+#### (Optional/Educational) Delete the source code and build files
+
+```bash
 cd ../
 rm -rf bitcoin/
+```
 
 ## Windows
 

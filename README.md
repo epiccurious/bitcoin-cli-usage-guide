@@ -103,7 +103,30 @@ xcode-select --install
 brew install automake berkeley-db@4 boost libevent libtool pkg-config qrencode qt@5
 ```
 
+#### (Optional/Privacy) Set up tor
+
+```bash
+## Install tor
+brew install tor
+
+## Start the tor service
+brew services start tor
+
+## Verify that tor is both "Running" and "Loaded"
+## You should see a response like the following:
+## <usere>@<computer> ~ % brew services info tor
+## tor (homebrew.mxcl.tor)
+## Running: ✔
+## Loaded: ✔
+## Schedulable: ✘
+## User: <user_name>
+## PID: <process_id>
+## <user>@<computer> ~ % 
+brew services info tor
+```
+
 #### Then, clone the Bitcoin Core repository
+
 ```bash
 git clone https://github.com/bitcoin/bitcoin.git
 cd bitcoin/

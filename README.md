@@ -55,7 +55,7 @@ sudo apt-get install -y build-essential libtool autotools-dev automake pkg-confi
 #sudo apt-get install libboost-all-dev
 ```
 
-#### Then, clone the repository
+#### Then, clone the Bitcoin Core repository
 
 ```bash
 git clone https://github.com/bitcoin/bitcoin
@@ -103,7 +103,7 @@ xcode-select --install
 brew install automake berkeley-db@4 boost libevent libtool pkg-config qrencode qt@5
 ```
 
-#### Then, clone the repository
+#### Then, clone the Bitcoin Core repository
 ```bash
 git clone https://github.com/bitcoin/bitcoin.git
 cd bitcoin/

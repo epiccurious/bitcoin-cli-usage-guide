@@ -65,17 +65,20 @@ cd bitcoin/
 #### Finally, perform the build process
 
 ```
-## Auto-generate the configure script
+## Change to the most recent version number.
+git checkout $(git tag | sort -V | grep -vE "rc|test|final" | tail -1) 
+
+## Auto-generate the configure script.
 ./autogen.sh
 
-## Check the dependencies and create the Makefile
+## Check the dependencies and create the Makefile.
 ./configure
 
-## Build Bitcoin Core using all CPU cores
+## Build Bitcoin Core using all CPU cores.
 make -j "$(($(nproc)+1))"
 
-## Check the integrity of the build
-make check
+## Check the integrity of the build.
+make -j "$(($(nproc)+1))" check
 ```
 
 #### Optionally, run the functional tests
@@ -171,9 +174,12 @@ We'll go through a few, each followed by a `cd` ("change directory") to change d
   cd projects/bitcoin/
   ```
 
-#### Finally, perform the build process
+#### Perform the build process
 
 ```bash
+## Change to the most recent version number.
+git checkout $(git tag | sort -V | grep -vE "rc|test|final" | tail -1) 
+
 ## Auto-generate the configure script.
 ./autogen.sh
 
